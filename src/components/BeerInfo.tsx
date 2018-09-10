@@ -7,7 +7,7 @@ export interface IBeerInfoProps {
 }
 
 export default class BeerInfo extends React.Component<IBeerInfoProps, any> {
-  public render() {
+  public render():JSX.Element | null {
     const { beer } = this.props;
 
     return beer.name !== INVALID_BEER_NAME ? this._getBeerInfoMarkup(beer) : null; 
