@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { INVALID_BEER_NAME } from '../constants/InitialBeer';
 import { IBeer } from '../types/Beer';
 
 export interface IBeerInfoProps {
@@ -7,8 +8,17 @@ export interface IBeerInfoProps {
 
 export default class BeerInfo extends React.Component<IBeerInfoProps, any> {
   public render() {
+    const { beer } = this.props;
+
+    return beer.name !== INVALID_BEER_NAME ? this._getBeerInfoMarkup(beer) : null; 
+  }
+
+  private _getBeerInfoMarkup(beer:IBeer):JSX.Element {
     return (
-      <div>{ this.props.beer.name }</div>
-    ); 
+        <div>
+          <h2>{ beer.name }</h2>
+          <p>{ beer.description }</p>
+        </div>
+    )
   }
 }

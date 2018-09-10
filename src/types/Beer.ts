@@ -4,5 +4,10 @@ export interface IBeerList {
 
 export interface IBeer {
     name: string,
-    id: number
+    id: number,
+    tagline: string,
+    description: string,
+    abv: number,
+    ibu: number,
+    srm: number
 }

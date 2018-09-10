@@ -1,14 +1,10 @@
 import { Reducer } from "redux";
+import { INITIAL_BEER } from '../constants/InitialBeer';
 import { BEER_DATA_FAIL, BEER_DATA_SUCCESS } from "../types/Actions";
-import { IBeer, IBeerList } from "../types/Beer";
-
-const initialBeer:IBeer = {
-    id: 0,
-    name: 'Loading...',
-}
+import { IBeerList } from "../types/Beer";
 
 const initialState:IBeerList = {
-    beers: [ initialBeer ]
+    beers: [ INITIAL_BEER ]
 }
 
 const beerListReducer:Reducer<IBeerList> = (state:IBeerList = initialState, action:any) => {
